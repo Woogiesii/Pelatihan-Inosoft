@@ -13,12 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ItemController::class, 'index']);
+Route::get('/index2', 'App\Http\Controllers\ItemController@index2');
+Route::get('/item/form', 'App\Http\Controllers\ItemController@itemForm');
+Route::post('/item/post', 'App\Http\Controllers\ItemController@itemPost');
+Route::get('/item/{itemName}', 'App\Http\Controllers\ItemController@item');
 
-Route::get('/book', 'App\Http\Controllers\BookController@index');
-Route::get('/book/create', 'App\http\Controllers\BookController@create');
-Route::get('/book/edit', 'App\http\Controllers\BookController@edit');
-Route::get('book/update', 'App\http\Controllers\BookController@update');
-Route::get('/book/delete', 'App\http\Controllers\BookController@destroy');

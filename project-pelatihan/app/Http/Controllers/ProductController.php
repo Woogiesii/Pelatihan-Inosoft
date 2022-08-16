@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ItemController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,46 +13,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        $namaDepan = 'Syifa';
-        $namaBelakang = 'Abyananta';
-        $data = [
-            'nama_depan' => $namaDepan,
-            'nama_belakang' => $namaBelakang
-        ];
-       return view('index', $data);//
-    }
-
-    public function index2()
-    {
-        $itemName = 'Kaos';
-        $itemPrice = '2000000';
-        $data = [
-            'item_name' => $itemName,
-            'item_price' => $itemPrice
-        ];
-       return view('index2', $data);//
-    }
-
-    function item($itemName)
-    {
-        $data = [
-            'item_name' => $itemName
-        ];
-        return view('item', $data);
-    }
-
-    function itemForm()
-    {
-        return view('itemForm', );
-    }
-
-    function itemPost(Request $request)
-    {
-        $data = [
-            'item_name' => $request->nama_item,
-            'item_price' => $request->harga_item
-        ];
-        return view('itemPost', $data);
+        //
     }
 
     /**
