@@ -13,8 +13,10 @@ class BookController extends Controller
      */
     public function index()
     {
-        $name = 'Syifa';
-       return view('book', ['name' => $name]);//
+        $bookMode = new Book();
+        $books = $bookModel->get();
+        echo "<pre>";
+        print_r($books);
     }
 
     /**
